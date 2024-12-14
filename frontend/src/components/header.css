@@ -1,0 +1,93 @@
+/* Общий стиль для навигации */
+.navbar {
+    background-color: #f8f9fa; /* Светлый фон */
+    padding: 15px 30px; /* Отступы */
+    border-bottom: 1px solid #ddd; /* Легкая граница снизу */
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: #007bff; /* Цвет для бренда */
+    text-decoration: none;
+  }
+  
+  .navbar-brand:hover {
+    color: #0056b3; /* Цвет при наведении */
+  }
+  
+  /* Стиль для навигационных ссылок (горизонтальное расположение) */
+  .navbar-nav {
+    display: flex;
+    justify-content: space-between; /* Равномерное распределение */
+    margin-left: auto;
+  }
+  
+  .nav-item {
+    margin-right: 20px; /* Отступы между кнопками */
+  }
+  
+  .nav-link {
+    font-size: 1rem;
+    color: #333;
+    padding: 8px 15px;
+    text-decoration: none;
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #fff;
+    background-color: #007bff; /* Цвет при наведении */
+    border-radius: 5px;
+  }
+  
+  /* Стиль для кнопки аккаунта */
+  .dropdown-toggle {
+    font-size: 1rem;
+    color: #007bff;
+    border: none;
+    background: none;
+    padding: 8px 15px;
+    cursor: pointer;
+  }
+  
+  .dropdown-toggle:hover {
+    color: #0056b3;
+  }
+  
+  .dropdown-menu {
+    min-width: 200px;
+    padding: 0;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dropdown-item {
+    font-size: 1rem;
+    color: #333;
+    padding: 10px 15px;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #f8f9fa;
+    color: #007bff;
+    border-radius: 5px;
+  }
+  
+  .navbar-toggler-icon {
+    background-color: #007bff;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 10px;
+    }
+    
+    .nav-item {
+      margin-right: 10px;
+    }
+    
+    .nav-link {
+      font-size: 1.2rem;
+    }
+  }
