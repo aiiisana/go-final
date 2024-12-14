@@ -17,7 +17,6 @@ const Login = () => {
     setLoading(true);
 
     try {
-      // Шаг 1: Отправка данных для входа
       const loginResponse = await axios.post("http://localhost:8080/api/login", {
         username: inputUsername,
         password: inputPassword,
@@ -29,7 +28,6 @@ const Login = () => {
 
       localStorage.setItem("authToken", token);
 
-      // Шаг 2: Получение информации о пользователе
       const userResponse = await axios.get("http://localhost:8080/api/profile", {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -38,10 +36,8 @@ const Login = () => {
 
       console.log("User info:", userResponse.data);
 
-      // Извлечение роли из ответа
       const { role } = userResponse.data;
 
-      // Шаг 3: Перенаправление на соответствующую страницу
       if (role === "admin") {
         navigate("/admin");
       } else {

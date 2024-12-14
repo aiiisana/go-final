@@ -37,5 +37,5 @@ services:
       - DB_PASSWORD=superuserPostgre
       - DB_NAME=finalgo
       - DB_PORT=5432
-      - REDIS_HOST=redis   # Убедитесь, что приложение подключается к контейнеру Redis через его имя
+      - REDIS_HOST=redis
       - REDIS_PORT=6379

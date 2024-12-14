@@ -21,7 +21,6 @@ const CreateProduct = () => {
     };
 
     try {
-      // Отправляем запрос на создание нового продукта
       const response = await axios.post(`http://localhost:8080/api/products`, newProduct);
       console.log('Product created successfully:', response.data);
       setSuccess(true);
@@ -29,7 +28,7 @@ const CreateProduct = () => {
       setProductName('');
       setProductPrice('');
       setProductDescription('');
-      setTimeout(() => navigate('/admin'), 2000); // Перенаправляем в админ панель после успешного создания
+      setTimeout(() => navigate('/admin'), 2000);
     } catch (error) {
       console.error('Error creating product:', error);
       setError('Error during product creation. Please try again.');
@@ -39,14 +38,12 @@ const CreateProduct = () => {
 
   return (
     <div className="create-product-wrapper">
-      {/* Ошибка и успех */}
       {error && <Alert variant="danger" className="mb-2">{error}</Alert>}
       {success && <Alert variant="success" className="mb-2">Product created successfully!</Alert>}
 
       <Form className="shadow p-4 bg-white rounded" onSubmit={handleSubmit}>
         <div className="h4 mb-2 text-center">Create New Product</div>
         
-        {/* Поле для имени продукта */}
         <Form.Group className="mb-2" controlId="ProductName">
           <Form.Label>Product Name</Form.Label>
           <Form.Control
@@ -58,7 +55,6 @@ const CreateProduct = () => {
           />
         </Form.Group>
 
-        {/* Поле для цены продукта */}
         <Form.Group className="mb-2" controlId="ProductPrice">
           <Form.Label>Price</Form.Label>
           <Form.Control
@@ -70,7 +66,6 @@ const CreateProduct = () => {
           />
         </Form.Group>
 
-        {/* Поле для описания продукта */}
         <Form.Group className="mb-2" controlId="ProductDescription">
           <Form.Label>Description</Form.Label>
           <Form.Control
@@ -82,7 +77,6 @@ const CreateProduct = () => {
           />
         </Form.Group>
 
-        {/* Кнопка отправки формы */}
         <Button className="w-100" variant="primary" type="submit">
           Create Product
         </Button>

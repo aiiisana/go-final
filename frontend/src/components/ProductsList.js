@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import "./products_list.css";  // Импортируем наш файл CSS
+import "./products_list.css"; 
 
 const Products = () => {
   const [products, setProducts] = useState([]);

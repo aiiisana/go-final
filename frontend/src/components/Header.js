@@ -2,14 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Dropdown } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import "./header.css";  // Импортируем файл стилей
+import "./header.css"; 
 
 const Header = () => {
   const navigate = useNavigate();
 
-  // Функция для выхода
   const handleLogout = () => {
-    // Логика выхода (например, удаление токена из локального хранилища)
     localStorage.removeItem('authToken');
     navigate('/login');
   };

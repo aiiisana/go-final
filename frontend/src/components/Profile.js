@@ -2,24 +2,22 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
 import axios from 'axios';
-import './profile.css';  // Импортируем файл стилей для компонента
+import './profile.css';
 
 const Profile = () => {
   const navigate = useNavigate();
 
-  // Состояние для хранения данных пользователя
   const [userData, setUserData] = useState({
     username: '',
     email: '',
     address: '',
-    id: null,  // ID или user_id для профиля
+    id: null, 
   });
 
   const [isEditing, setIsEditing] = useState(false); 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null); 
 
-  // Эффект для получения данных профиля
   useEffect(() => {
     const fetchProfileData = async () => {
       try {
@@ -47,7 +45,6 @@ const Profile = () => {
     fetchProfileData();
   }, []);
 
-  // Обработчик для изменений в форме
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUserData({
@@ -63,19 +60,18 @@ const Profile = () => {
         username: userData.username,
         email: userData.email,
         address: userData.address,
-        // Добавьте другие поля, если они требуются
       };
 
-      console.log('Saving profile data:', updatedData);  // Логируем данные перед отправкой
+      console.log('Saving profile data:', updatedData); 
 
       const response = await axios.put(`http://localhost:8080/api/users/${userData.id}`, updatedData, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('authToken')}`,
-          'Content-Type': 'application/json',  // Убедитесь, что сервер принимает JSON
+          'Content-Type': 'application/json'
         },
       });
 
-      console.log('Profile updated:', response.data);  // Логируем успешный ответ
+      console.log('Profile updated:', response.data);
       setIsEditing(false);
     } catch (err) {
       console.error('Error saving profile data:', err.response ? err.response.data : err.message);
@@ -83,7 +79,6 @@ const Profile = () => {
     }
 };
 
-  // Обработчик для выхода
   const handleLogout = () => {
     localStorage.removeItem('authToken');
     navigate('/login');

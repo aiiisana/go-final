@@ -1,7 +1,7 @@
 global:
-  scrape_interval: 15s  # Интервал, с которым будет происходить сбор метрик
+  scrape_interval: 15s
 
 scrape_configs:
-  - job_name: 'golang-app'  # Имя вашего приложения или сервиса
+  - job_name: 'golang-app' 
     static_configs:
-      - targets: ['localhost:8080']  # Указываем адрес, на котором будет доступна ваша метрика
+      - targets: ['localhost:8080']  

@@ -22,7 +22,7 @@ const CreateCategory = () => {
       setSuccess(true);
       setError('');
       setCategoryName('');
-      setTimeout(() => navigate('/admin'), 2000); // Redirect to the admin dashboard after success
+      setTimeout(() => navigate('/admin'), 2000);
     } catch (error) {
       console.error('Error creating category:', error);
       setError('Error during category creation. Please try again.');

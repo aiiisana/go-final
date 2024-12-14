@@ -7,7 +7,7 @@ const CreateUser = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [role, setRole] = useState('user'); // Можно выбрать роль пользователя
+  const [role, setRole] = useState('user');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ const CreateUser = () => {
       username,
       email,
       password,
-      role, // Можно передавать роль (например, 'admin' или 'user')
+      role, 
     };
 
     try {
@@ -31,7 +31,7 @@ const CreateUser = () => {
       setEmail('');
       setPassword('');
       setRole('user');
-      setTimeout(() => navigate('/admin'), 2000); // Redirect to the admin dashboard after success
+      setTimeout(() => navigate('/admin'), 2000); 
     } catch (error) {
       console.error('Error creating user:', error);
       setError('Error during user creation. Please try again.');

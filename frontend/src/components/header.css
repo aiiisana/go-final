@@ -1,30 +1,28 @@
-/* Общий стиль для навигации */
 .navbar {
-    background-color: #f8f9fa; /* Светлый фон */
-    padding: 15px 30px; /* Отступы */
-    border-bottom: 1px solid #ddd; /* Легкая граница снизу */
+    background-color: #f8f9fa; 
+    padding: 15px 30px; 
+    border-bottom: 1px solid #ddd;
   }
   
   .navbar-brand {
     font-weight: bold;
     font-size: 1.8rem;
-    color: #007bff; /* Цвет для бренда */
+    color: #007bff;
     text-decoration: none;
   }
   
   .navbar-brand:hover {
-    color: #0056b3; /* Цвет при наведении */
+    color: #0056b3;
   }
   
-  /* Стиль для навигационных ссылок (горизонтальное расположение) */
   .navbar-nav {
     display: flex;
-    justify-content: space-between; /* Равномерное распределение */
+    justify-content: space-between;
     margin-left: auto;
   }
   
   .nav-item {
-    margin-right: 20px; /* Отступы между кнопками */
+    margin-right: 20px;
   }
   
   .nav-link {
@@ -37,11 +35,10 @@
   
   .nav-link:hover {
     color: #fff;
-    background-color: #007bff; /* Цвет при наведении */
+    background-color: #007bff; 
     border-radius: 5px;
   }
   
-  /* Стиль для кнопки аккаунта */
   .dropdown-toggle {
     font-size: 1rem;
     color: #007bff;

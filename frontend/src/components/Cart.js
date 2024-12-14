@@ -11,7 +11,6 @@ const Cart = () => {
 
   const token = localStorage.getItem('authToken');
 
-  // Функция для получения user_id из токена
   const getUserIdFromToken = () => {
     if (!token) return null;
     const payload = JSON.parse(atob(token.split('.')[1]));
@@ -20,7 +19,6 @@ const Cart = () => {
 
   const userId = getUserIdFromToken();
 
-  // Функция для получения корзины
   const fetchCart = async () => {
     if (!userId) return;
 
@@ -38,7 +36,6 @@ const Cart = () => {
     }
   };
 
-  // Функция для создания корзины
   const createCart = async () => {
     if (!userId) return;
 
@@ -56,12 +53,10 @@ const Cart = () => {
     }
   };
 
-  // Загружаем корзину при монтировании компонента
   useEffect(() => {
     fetchCart();
   }, [userId]);
 
-  // Рендерим компонент
   if (loading) {
     return <div>Loading...</div>;
   }

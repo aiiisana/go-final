@@ -20,7 +20,7 @@ const Register = () => {
       event.preventDefault();
   
       const newUser = {
-        username: inputUsername, // здесь изменили на username
+        username: inputUsername,
         email: inputEmail,
         password: inputPassword,
       };

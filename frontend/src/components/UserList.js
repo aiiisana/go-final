@@ -28,7 +28,7 @@ const UserList = () => {
   const handleDelete = async (userId) => {
     try {
       await axios.delete(`/api/users/${userId}`);
-      setUsers(users.filter(user => user.id !== userId)); // Remove deleted user from the state
+      setUsers(users.filter(user => user.id !== userId));
     } catch (error) {
       console.error('Error deleting user:', error);
       setError('Error deleting user. Please try again.');

@@ -9,9 +9,9 @@ const Admin = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
-  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080/api'; // URL из переменной окружения
+  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080/api';
 
-  const token = localStorage.getItem("authToken"); // или получите из sessionStorage или cookies
+  const token = localStorage.getItem("authToken");
   axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
   useEffect(() => {
@@ -37,7 +37,7 @@ const Admin = () => {
     };
   
     fetchData();
-  }, [API_URL]); // Добавляем API_URL в массив зависимостей
+  }, [API_URL]);
 
   const handleDeleteUser = async (userId) => {
     try {
